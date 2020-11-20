@@ -1,0 +1,64 @@
+public class Main {
+
+ public static void main(String[] args) {
+
+
+       System.out.println(isStrobogrammatic(1001));
+        System.out.println(powerOfNumber(16));
+
+    }
+
+            /*
+        1 1
+        0 0
+        8 8
+        6 9
+        9 6
+        */
+    private static boolean isStrobogrammatic(int n){
+
+
+            //
+
+            String text = String.valueOf(n);
+
+
+
+
+            //Да простит меня Шива за такой код
+            int firstValue = Integer.parseInt(String.valueOf(text.charAt(0)));
+            int lastValue = Integer.parseInt(String.valueOf(text.charAt(text.length()-1)));
+
+             System.out.println(firstValue);
+             System.out.println(lastValue);
+
+             if((firstValue == 0 || firstValue == 1 || firstValue == 8)&& firstValue == lastValue){
+                 return true;
+             }else if((firstValue == 6 && lastValue == 9) || (firstValue == 9 && lastValue == 6)){
+                 return true;
+             }
+             else{
+                 return false;
+             }
+
+    }
+
+
+    private static boolean powerOfNumber(int n){
+
+        if(n==0){
+            return false;
+        }
+        else {
+            while (n!=1){
+                if(n%4 != 0)
+                    return false;
+                n = n/4;
+            }
+            return true;
+        }
+
+
+    }
+
+}
